@@ -3,7 +3,9 @@
 # THESE IMAGES ARE STILL IN A PROTOTYPING PHASE -
 # I'M HOPING TO INCLUDE MANY IMAGES (KDE,GNOME,BLUEFIN (ALL WITH -VM IMAGES WITH VIRT-MANAGER ADDED ON TOP))
 
-## Hyperion is an upcoming project of mine which will serve as a large repository with everything I need for my main systems to run. There will be generalised (non-configured) images with extra tweaks on top. The 'special' images will aim to prvoide a better out-of-box experience for certain devices (eg AMD GPU systems may have a special AMD image, NVIDIA will have their own NVIDIA image) 
+## Hyperion will act as a repository of Universal Blue, Fedora-Based system images that contain all the components I need to run my primary systems.  Additional adjustments will be made to generalised (non-configured) images.  A better out-of-box experience for specific devices will be the goal of the "special" images (for example, AMD GPU systems may have a special AMD image, and NVIDIA users will have their own NVIDIA image). 
+
+ I intend to include the CachyOS Kernel (or something comparable) along with a few standard applications in the RPM package format, like Steam and the Brave Browser.
 
 # Purpose
 
