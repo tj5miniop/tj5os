@@ -3,7 +3,7 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-FROM quay.io/fedora/kinoite:42
+FROM ghcr.io/ublue-os/kinoite-main:42
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
