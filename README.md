@@ -3,6 +3,10 @@
 # THESE IMAGES ARE STILL IN A PROTOTYPING PHASE -
 # I'M HOPING TO INCLUDE MANY IMAGES (KDE,GNOME,BLUEFIN (ALL WITH -VM IMAGES WITH VIRT-MANAGER ADDED ON TOP))
 
+## Hyperion will act as a repository of Universal Blue, Fedora-Based system images that contain all the components I need to run my primary systems.  Additional adjustments will be made to generalised (non-configured) images.  A better out-of-box experience for specific devices will be the goal of the "special" images (for example, AMD GPU systems may have a special AMD image, and NVIDIA users will have their own NVIDIA image). 
+
+ I intend to include the CachyOS Kernel (or something comparable) along with a few standard applications in the RPM package format, like Steam and the Brave Browser.
+
 # Purpose
 
 This repository is meant to be a template for building your own custom [bootc](https://github.com/bootc-dev/bootc) image. This template is the recommended way to make customizations to any image published by the Universal Blue Project:
