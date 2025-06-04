@@ -2,22 +2,27 @@
 
 set -ouex pipefail
 
-### Install packages
+#Check for updates to the system and install them 
+dnf5 -y update 
+dnf5 -y upgrade 
 
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
+#Add CachyOS kernel COPR repo and replace the Kernel packages (this will break some stuff which I intend to fix after prototyping)
+dnf5 -y copr enable bieszczaders/kernel-cachyos
+rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel-cachyos
+dnf5 -y copr disable bieszczaders/kernel-cachyos
 
-# this installs a package from fedora repos
-dnf5 install -y tmux 
+# Add cachy OS addons (modified instructions from COPR page https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-addons/)
+dnf5 -y copr enable bieszczaders/kernel-cachyos-addons
+dnf5 -y install libcap-ng-devel procps-ng-devel
+dnf5 -y install uksmd
 
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
+dnf5 -y install distrobox podman
+
+dnf5 -y clean all 
+
+
+
+
 
 #### Example for enabling a System Unit File
 
