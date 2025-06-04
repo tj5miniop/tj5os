@@ -3,6 +3,8 @@
 # THESE IMAGES ARE STILL IN A PROTOTYPING PHASE -
 # I'M HOPING TO INCLUDE MANY IMAGES (KDE,GNOME,BLUEFIN (ALL WITH -VM IMAGES WITH VIRT-MANAGER ADDED ON TOP))
 
+## Hyperion is an upcoming project of mine which will serve as a large repository with everything I need for my main systems to run. There will be generalised (non-configured) images with extra tweaks on top. The 'special' images will aim to prvoide a better out-of-box experience for certain devices (eg AMD GPU systems may have a special AMD image, NVIDIA will have their own NVIDIA image) 
+
 # Purpose
 
 This repository is meant to be a template for building your own custom [bootc](https://github.com/bootc-dev/bootc) image. This template is the recommended way to make customizations to any image published by the Universal Blue Project:
