@@ -37,6 +37,7 @@ RUN echo 'Installing Kernel-Blu From sentry COPR' && \
     kernel-uki-virt \
     kernel-headers \
     kernel-devel && \
+    dracut --regenerate-all --force && \
     ostree container commit
 
 ### LINTING
