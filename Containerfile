@@ -37,6 +37,8 @@ RUN echo 'Installing Kernel-Blu From sentry COPR' && \
     kernel-uki-virt \
     kernel-headers \
     kernel-devel && \
+    dnf5 -y clean all && \
+    rpm-ostree cleanup -m && \
     dracut --regenerate-all --force && \
     ostree container commit
 
