@@ -23,6 +23,11 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
     /ctx/build.sh && \
+    rpm-ostree override replace https://download.copr.fedorainfracloud.org/results/whitehara/kernel-cachyos-preempt/fedora-42-x86_64/09135946-kernel/kernel-6.14.10-300_cachyos_preempt.fc42.x86_64.rpm \
+    https://download.copr.fedorainfracloud.org/results/whitehara/kernel-cachyos-preempt/fedora-42-x86_64/09135946-kernel/kernel-core-6.14.10-300_cachyos_preempt.fc42.x86_64.rpm \
+    https://download.copr.fedorainfracloud.org/results/whitehara/kernel-cachyos-preempt/fedora-42-x86_64/09135946-kernel/kernel-modules-6.14.10-300_cachyos_preempt.fc42.x86_64.rpm \
+    https://download.copr.fedorainfracloud.org/results/whitehara/kernel-cachyos-preempt/fedora-42-x86_64/09135946-kernel/kernel-modules-core-6.14.10-300_cachyos_preempt.fc42.x86_64.rpm  \
+    https://download.copr.fedorainfracloud.org/results/whitehara/kernel-cachyos-preempt/fedora-42-x86_64/09135946-kernel/kernel-uki-virt-6.14.10-300_cachyos_preempt.fc42.x86_64.rpm && \
     ostree container commit
     
 ### LINTING
