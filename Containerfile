@@ -22,14 +22,23 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
-    /ctx/build.sh && \
-    rpm-ostree override replace https://download.copr.fedorainfracloud.org/results/whitehara/kernel-cachyos-preempt/fedora-42-x86_64/09135946-kernel/kernel-6.14.10-300_cachyos_preempt.fc42.x86_64.rpm \
-    https://download.copr.fedorainfracloud.org/results/whitehara/kernel-cachyos-preempt/fedora-42-x86_64/09135946-kernel/kernel-core-6.14.10-300_cachyos_preempt.fc42.x86_64.rpm \
-    https://download.copr.fedorainfracloud.org/results/whitehara/kernel-cachyos-preempt/fedora-42-x86_64/09135946-kernel/kernel-modules-6.14.10-300_cachyos_preempt.fc42.x86_64.rpm \
-    https://download.copr.fedorainfracloud.org/results/whitehara/kernel-cachyos-preempt/fedora-42-x86_64/09135946-kernel/kernel-modules-core-6.14.10-300_cachyos_preempt.fc42.x86_64.rpm  \
-    https://download.copr.fedorainfracloud.org/results/whitehara/kernel-cachyos-preempt/fedora-42-x86_64/09135946-kernel/kernel-uki-virt-6.14.10-300_cachyos_preempt.fc42.x86_64.rpm && \
+    /ctx/build.sh \
+
+RUN echo 'Installing Kernel-Blu From sentry COPR' && \
+    dnf5 -y copr enable sentry/kernel-blu && \
+    rpm-ostree override replace \
+    --experimental \
+    --from repo=copr:copr.fedorainfracloud.org:sentry:kernel-blu \
+    kernel \
+    kernel-core \
+    kernel-modules \
+    kernel-modules-core \
+    kernel-modules-extra \
+    kernel-uki-virt \
+    kernel-headers \
+    kernel-devel && \
     ostree container commit
-    
+
 ### LINTING
 ## Verify final image and contents are correct.
 RUN bootc container lint
