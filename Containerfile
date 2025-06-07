@@ -25,10 +25,10 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     /ctx/build.sh \
 
 RUN echo 'Installing Kernel-Blu From sentry COPR' && \
-    dnf5 -y copr enable whitehara/kernel-cachyos-preempt && \
+    dnf5 -y copr enable sentry/kernel-blu && \
     rpm-ostree override replace \
     --experimental \
-    --from repo=copr:copr.fedorainfracloud.org:whitehara:kernel-cachyos-preempt \
+    --from repo=copr:copr.fedorainfracloud.org:sentry:kernel-blu \
     kernel \
     kernel-core \
     kernel-modules \
