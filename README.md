@@ -1,32 +1,29 @@
-# Hyperion (WIP)
 
-# THESE IMAGES ARE STILL IN A PROTOTYPING PHASE -
-# I'M HOPING TO INCLUDE MANY IMAGES (KDE,GNOME,BLUEFIN (ALL WITH -VM IMAGES WITH VIRT-MANAGER ADDED ON TOP))
+# Hyperion (WIP) 🚀
+Note: These images are still in the prototyping phase — stay tuned for more updates!
 
-## Hyperion will act as a repository of Universal Blue, Fedora-Based system images that contain all the components I need to run my primary systems.  Additional adjustments will be made to generalised (non-configured) images.  A better out-of-box experience for specific devices will be the goal of the "special" images (for example, AMD GPU systems may have a special AMD image, and NVIDIA users will have their own NVIDIA image). 
+# About Hyperion
+Hyperion is a ressurected project of mine, which aims to create a stable, bleeding-edge and reliable system for gaming and content creation. These images come pre-loaded with all the essential components to run your primary systems smoothly. We’re also working on tailored "special" images optimized for specific devices — think AMD GPU systems with custom AMD images, or NVIDIA setups with dedicated NVIDIA images — for an out-of-the-box experience tailored just for you!
 
+# What’s Coming
+#### A Variety of Images: Currently, only the stock Hyperion image with the Blu Kernel is available. Future releases will include KDE, GNOME, and Bluefin (all with -VM images and Virt-Manager integration).
 
-# Features 
+#### Enhanced Hardware Support: The Blu Kernel, based on the old Fsync kernel and Fedora ARK, is optimized for broader hardware compatibility and cutting-edge features. It’s especially great for gaming and content creation, based on my testing!
 
-- blu kernel - an optimised kernel, based off of the old fsync kernel and fedora ARK, which aims to support more hardware and give users access to cutting-edge features. It also also great (based on my testing) for gaming and content creation.
+#### Pure Fedora Experience: Hyperion keeps things stock — no extra branding or customization. You can easily enable additional icon themes like Kora and Papirus through system settings.
 
-- Provides a vanilla experience - Hyperion doesn't apply any extra branding/customization on top of Fedora's defaults, which remain stock. Extra icon themes (Kora & Papirus) are easily enabled in the system settings.
+### Pre-installed Apps for Your Convenience:
 
-- Brave Browser included - Brave is one of the safest Chromium-based browsers, ensuring better raw performance than Google Chrome whilst still keeping your data safe. Brave is also default in Nobara linux, which Hyperion is inspired by
-
-- Steam installed Out Of The Box - Steam is automatically installed as an rpm package, so all you need to do is log in, enable proton, and get gaming!. 
-
-- Distroshelf & distrobox installed for easy creation of containers - Distroshelf allow users to easily install their favorite distro as a container, allowing any app from the AUR, Nix, Ubuntu etc to be installed.
-
-
-
-# images
-
-currently, only 1 image is being built - 
-
-Hyperion - the stock image with the blue kernel. there is an issue where kernel panics are common when rebasing from a pre-existing image, all you need to do before rebooting after a rebase is to run 'rpm-ostree initramfs --enable -r' to rebuild your initramfs. 
+Brave Browser: A secure, Chromium-based browser that offers excellent performance and privacy. It’s also the default in Nobara Linux.
+Steam: Ready to go out of the box! Just log in, enable Proton, and start gaming.
+Container Tools: Includes DistroShelf and Distrobox for effortless container creation, allowing you to run your favorite distros and AUR packages seamlessly.
 
 
+Current Image Status
+Right now, we’re building the Hyperion stock image with the Blue Kernel. Please note: if you encounter kernel panics after rebasing from an existing image, simply run:
+
+rpm-ostree initramfs --enable -r
+before rebooting — this will rebuild your initramfs and resolve the issue.
 
 
 # Purpose
