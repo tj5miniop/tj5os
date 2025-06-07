@@ -3,7 +3,7 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-FROM ghcr.io/ublue-os/kinoite-main:42
+FROM ghcr.io/ublue-os/kinoite-main:42 as hyperion:next
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
@@ -25,10 +25,10 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     /ctx/build.sh \
 
 RUN echo 'Installing Kernel-Blu From sentry COPR' && \
-    dnf5 -y copr enable sentry/kernel-blu && \
+    dnf5 -y copr enable whitehara/kernel-cachyos-preempt && \
     rpm-ostree override replace \
     --experimental \
-    --from repo=copr:copr.fedorainfracloud.org:sentry:kernel-blu \
+    --from repo=copr:copr.fedorainfracloud.org:whitehara:kernel-cachyos-preempt \
     kernel \
     kernel-core \
     kernel-modules \

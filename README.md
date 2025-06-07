@@ -5,7 +5,29 @@
 
 ## Hyperion will act as a repository of Universal Blue, Fedora-Based system images that contain all the components I need to run my primary systems.  Additional adjustments will be made to generalised (non-configured) images.  A better out-of-box experience for specific devices will be the goal of the "special" images (for example, AMD GPU systems may have a special AMD image, and NVIDIA users will have their own NVIDIA image). 
 
- I intend to include the CachyOS Kernel (or something comparable) along with a few standard applications in the RPM package format, like Steam and the Brave Browser.
+
+# Features 
+
+- blu kernel - an optimised kernel, based off of the old fsync kernel and fedora ARK, which aims to support more hardware and give users access to cutting-edge features. It also also great (based on my testing) for gaming and content creation.
+
+- Provides a vanilla experience - Hyperion doesn't apply any extra branding/customization on top of Fedora's defaults, which remain stock. Extra icon themes (Kora & Papirus) are easily enabled in the system settings.
+
+- Brave Browser included - Brave is one of the safest Chromium-based browsers, ensuring better raw performance than Google Chrome whilst still keeping your data safe. Brave is also default in Nobara linux, which Hyperion is inspired by
+
+- Steam installed Out Of The Box - Steam is automatically installed as an rpm package, so all you need to do is log in, enable proton, and get gaming!. 
+
+- Distroshelf & distrobox installed for easy creation of containers - Distroshelf allow users to easily install their favorite distro as a container, allowing any app from the AUR, Nix, Ubuntu etc to be installed.
+
+
+
+# images
+
+currently, only 1 image is being built - 
+
+Hyperion - the stock image with the blue kernel. there is an issue where kernel panics are common when rebasing from a pre-existing image, all you need to do before rebooting after a rebase is to run 'rpm-ostree initramfs --enable -r' to rebuild your initramfs. 
+
+
+
 
 # Purpose
 
