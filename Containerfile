@@ -19,7 +19,6 @@ FROM ghcr.io/ublue-os/kinoite-main:42
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
-    rpm-ostree initramfs --enable
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
