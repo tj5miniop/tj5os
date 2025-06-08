@@ -47,7 +47,7 @@ dnf5 -y copr enable danayer/mesa-git
 dnf5 -y copr enable danayer/linux-firmware-git
 dnf5 -y copr enable danayer/Vulkan-Git
 dnf5 -y copr enable danayer/libdrm-git
-dnf5 -y update --refresh -y
+dnf5 -y update --refresh -y --allowerasing
 dnf5 -y clean all
 dnf5 -y copr disable danayer/mesa-git 
 dnf5 -y copr disable danayer/linux-firmware-git
