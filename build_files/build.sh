@@ -16,7 +16,7 @@ dnf5 -y config-manager addrepo --from-repofile=https://negativo17.org/repos/fedo
 dnf5 -y config-manager setopt "*fedora*".exclude="mesa-* kernel-core-* kernel-modules-* kernel-uki-virt-*"
 # Add SELinux override to install kernel
 setsebool -P domain_kernel_load_modules on
-sudo dnf5 -y remove kernel-uki-virt
+dnf5 -y remove kernel-uki-virt
 dnf5 -y copr enable bieszczaders/kernel-cachyos
 rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel-cachyos
 dnf5 -y copr enable bieszczaders/kernel-cachyos
@@ -26,11 +26,11 @@ dracut -f --regenerate-all
 
 
 # Install Browser 
-dnf5 -y install dnf-plugins-core
+#dnf5 -y install dnf-plugins-core
 
-dnf5 -y config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+#dnf5 -y config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
 
-dnf5 -y install brave-browser
+#dnf5 -y install brave-browser
 
 #Remove firefox 
 dnf5 -y remove firefox --allowerasing 
@@ -44,16 +44,23 @@ dnf5 -y update --refresh
 dnf5 -y copr enable bieszczaders/kernel-cachyos-addons
 dnf5 -y update
 dnf5 -y install libcap-ng libcap-ng-devel procps-ng procps-ng-devel
-dnf5 -y install cachyos-settings ananicy-cpp uksmd --allowerasing
+dnf5 -y install cachyos-settings scx-scheds uksmd --allowerasing
 systemctl enable uksmd.service
+systemctl enable scx.service
 dnf5 -y copr disable bieszczaders/kernel-cachyos-addons
 dnf5 -y clean all
 
  #Install Steam Package
 dnf5 -y install steam --allowerasing
 
+dnf5 -y copr enable danayer/mesa-git 
+dnf5 -y update
+dnf5 -y upgrade
+dnf5 -y clean all
 
 
+#Install icon themes
+dnf5 -y install papirus-icon-theme
 
 
 #### Example for enabling a System Unit File
