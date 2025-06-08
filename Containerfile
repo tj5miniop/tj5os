@@ -21,14 +21,8 @@ FROM ghcr.io/ublue-os/kinoite-main:42
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
-    --mount=type=tmpfs,dst=/tmp && \
-
-RUN echo 'Installing Kernel-Blu From sentry COPR' && \
-    dnf5 -y config-manager setopt "*fedora*".exclude="mesa-* kernel-core-* kernel-modules-* kernel-uki-virt-*" && \
-    dnf5 -y copr enable sentry/kernel-blu && \
-    dnf5 -y update && \
-    dnf5 -y upgrade && \
-    /ctx/build.sh && \
+    --mount=type=tmpfs,dst=/tmp \
+    ctx/build.sh && \
     ostree container commit
 
 ### LINTING
