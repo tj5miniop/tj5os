@@ -10,7 +10,7 @@ dnf5 -y install distrobox podman
 
 dnf5 -y clean all 
 
-# NOTICE - Kernel installation will be moved to a separate script/Containerfile - as of 08/06/25 - trying this now in build.sh
+# NOTICE - Kernel installation will be moved to a separate script/Containerfile - as of 08/06/25 - trying this now in build.sh - Note, kernel installation appears to be working
 dnf5 -y config-manager addrepo --from-repofile=https://negativo17.org/repos/fedora-steam.repo
 dnf5 -y config-manager addrepo --from-repofile=https://negativo17.org/repos/fedora-rar.repo
 dnf5 -y config-manager setopt "*fedora*".exclude="mesa-* kernel-core-* kernel-modules-* kernel-uki-virt-*"
@@ -24,16 +24,8 @@ dnf5 -y copr enable bieszczaders/kernel-cachyos
 #Regenerate Kernel Modules (Just in Case)
 dracut -f --regenerate-all
 
-
-# Install Browser 
-#dnf5 -y install dnf-plugins-core
-
-#dnf5 -y config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
-
-#dnf5 -y install brave-browser
-
-#Remove firefox 
-dnf5 -y remove firefox --allowerasing 
+#Remove firefox - Users can install their own browser
+dnf5 -y remove firefox
 
 # Install steam - code taken from ublue-rolling-images 
 dnf5 -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
@@ -54,10 +46,15 @@ dnf5 -y clean all
 dnf5 -y install steam --allowerasing
 
 dnf5 -y copr enable danayer/mesa-git 
-dnf5 -y update
-dnf5 -y upgrade
+dnf5 -y copr enable danayer/linux-firmware-git
+dnf5 -y enable danayer/Vulkan-Git
+dnf5 -y enable danayer/libdrm-git
+dnf5 -y update --refresh -y
 dnf5 -y clean all
-
+dnf5 -y copr disable danayer/mesa-git 
+dnf5 -y copr disable danayer/linux-firmware-git
+dnf5 -y disable danayer/Vulkan-Git
+dnf5 -y disable danayer/libdrm-git
 
 #Install icon themes
 dnf5 -y install papirus-icon-theme
