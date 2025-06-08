@@ -22,23 +22,13 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
-    /ctx/build.sh \
 
 RUN echo 'Installing Kernel-Blu From sentry COPR' && \
+    dnf5 -y config-manager setopt "*fedora*".exclude="mesa-* kernel-core-* kernel-modules-* kernel-uki-virt-*" && \
     dnf5 -y copr enable sentry/kernel-blu && \
-    rpm-ostree override replace \
-    --experimental \
-    --from repo=copr:copr.fedorainfracloud.org:sentry:kernel-blu \
-    kernel \
-    kernel-core \
-    kernel-modules \
-    kernel-modules-core \
-    kernel-modules-extra \
-    kernel-uki-virt \
-    kernel-headers \
-    kernel-devel && \
-    dnf5 -y clean all && \
-    rpm-ostree cleanup -m && \
+    dnf5 -y update && \
+    dnf5 -y upgrade && \
+    /ctx/build.sh && \
     ostree container commit
 
 ### LINTING
