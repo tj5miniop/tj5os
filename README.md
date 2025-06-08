@@ -6,25 +6,23 @@ Note: These images are still in the prototyping phase — stay tuned for more up
 Hyperion is a ressurected project of mine, which aims to create a stable, bleeding-edge and reliable system for gaming and content creation. These images come pre-loaded with all the essential components to run your primary systems smoothly. We’re also working on tailored "special" images optimized for specific devices — think AMD GPU systems with custom AMD images, or NVIDIA setups with dedicated NVIDIA images — for an out-of-the-box experience tailored just for you!
 
 # What’s Coming
-#### A Variety of Images: Currently, only the stock Hyperion image with the Blu Kernel is available. Future releases will include KDE, GNOME, and Bluefin (all with -VM images and Virt-Manager integration).
-
 #### Enhanced Hardware Support: The Official CachyOS Kernel port to Fedora linux & ananicy-cpp is fully supported within hyperion, allowing users to get the same great kernel in CachyOS, but in a more stable and reliable base system.
 
-#### Pure Fedora Experience: Hyperion keeps things stock — no extra branding or customization. You can easily enable additional icon themes like Kora and Papirus through system settings.
+#### A pure(ish) Fedora Experience: Hyperion keeps things stock — no extra branding or customization. You can easily enable additional icon themes like Kora and Papirus through system settings.
 
 ### Pre-installed Apps for Your Convenience:
 
-Brave Browser: A secure, Chromium-based browser that offers excellent performance and privacy. It’s also the default in Nobara Linux.
+Brave Browser: A secure, Chromium-based browser that offers excellent performance and privacy. It’s also the default in Nobara Linux. Installed as a flatpak.
 
-Steam: Ready to go out of the box! Just log in, enable Proton, and start gaming.
+Steam: Ready to go out of the box! Just log in, enable Proton, and start gaming. Installed as a native RPM package, to ensure no performance loss. ProtonPlus is also included out of the box to easily install any version of proton.
 
 Container Tools: Includes DistroShelf and Distrobox for effortless container creation, allowing you to run your favorite distros and AUR packages seamlessly.
 
 Virt-Manager: For you virtual-machine enthusiasts, there will be a dedicated 'hyperion-vm' image with virt-mananger preinstalled and configured right out of the box. You can also get GNOME Boxes installed easily on top of any image using flatpak.
 
 Current Image Status
-Right now, only the stock image is being built, and (as far as I can see, there may be issues with booting the image due to the custom CachyOS kernel. If rebasing from a fedora image to this, I strongly reccomend enabling initramfs re-generation to hopefully solve the issue. (This comment will go away once the issue is fully resolved).
-rpm-ostree initramfs --enable -r
+Right now, only the stock image is being built, and as far as I can see, there may be issues with booting the image due to the custom CachyOS kernel. If rebasing from a fedora image to this, I strongly reccomend enabling initramfs re-generation to hopefully solve the issue. (This comment will go away once the issue is fully resolved).
+`rpm-ostree initramfs --enable -r`
 before rebooting — this will rebuild your initramfs and resolve the issue.
 
 
