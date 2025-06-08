@@ -45,14 +45,14 @@ dnf5 -y install steam --allowerasing
 
 dnf5 -y copr enable danayer/mesa-git 
 dnf5 -y copr enable danayer/linux-firmware-git
-dnf5 -y enable danayer/Vulkan-Git
-dnf5 -y enable danayer/libdrm-git
+dnf5 -y copr enable danayer/Vulkan-Git
+dnf5 -y copr enable danayer/libdrm-git
 dnf5 -y update --refresh -y
 dnf5 -y clean all
 dnf5 -y copr disable danayer/mesa-git 
 dnf5 -y copr disable danayer/linux-firmware-git
-dnf5 -y disable danayer/Vulkan-Git
-dnf5 -y disable danayer/libdrm-git
+dnf5 -y copr disable danayer/Vulkan-Git
+dnf5 -y copr disable danayer/libdrm-git
 
 #Install icon themes
 dnf5 -y install papirus-icon-theme
