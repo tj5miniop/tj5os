@@ -37,8 +37,6 @@ dnf5 -y copr enable bieszczaders/kernel-cachyos-addons
 dnf5 -y update
 dnf5 -y install libcap-ng libcap-ng-devel procps-ng procps-ng-devel
 dnf5 -y install cachyos-settings scx-scheds uksmd --allowerasing
-systemctl enable uksmd.service
-systemctl enable scx.service
 dnf5 -y copr disable bieszczaders/kernel-cachyos-addons
 dnf5 -y clean all
 
