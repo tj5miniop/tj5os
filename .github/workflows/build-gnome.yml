@@ -1,5 +1,5 @@
 ---
-name: Build KDE Image
+name: Build GNOME Image
 on:
   pull_request:
     branches:
