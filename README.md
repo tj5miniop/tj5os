@@ -7,6 +7,10 @@ tj5os is a ressurected project of mine, which aims to provide an enhanced stock 
 
 Now, tj5os has a standalone Fedora Kinoite image as well as a Bazzite image, giving you the best of both worlds.
 
+# NOTICE - Other Image(s)
+## Due to the way tj5-os is built, a separate version of the KDE edition with flatpak apps such as DistroShelf, ProtonPlus and the Native Brave Browser can be found at https://github.com/tj5miniop/tj5-os
+
+
 # What’s Coming
 #### Enhanced Hardware Support: The Official CachyOS Kernel port to Fedora linux & ananicy-cpp is fully supported within hyperion, allowing users to get the same great kernel in CachyOS, but in a more stable and reliable base system.
 
@@ -16,9 +20,8 @@ Now, tj5os has a standalone Fedora Kinoite image as well as a Bazzite image, giv
 
 Steam: Ready to go out of the box! Just log in, enable Proton, and start gaming. Installed as a native RPM package, to ensure no performance loss. ProtonPlus is also included out of the box to easily install any version of proton.
 
-Heroic Games Launcher: The Heroic Games Launcher is included to allow easy installation of Epic,GOG & Amazon Games titles. Heroic integrates well with Steam, allowing games to be entered using big picture mode 
-
 Container Tools: Includes Distrobox CLI for container creation. You can easily install DistroShelf or BoxBuddy from the software center for a nice inteface to go alongside. 
+
 
 
 
