@@ -1,9 +1,11 @@
 
-# Hyperion (WIP) 🚀
+# tj5-os (WIP) 🚀
 Note: These images are still in the prototyping phase — stay tuned for more updates!
 
-# About Hyperion
-Hyperion is a ressurected project of mine, which aims to provide an enhanced stock Fedora experience for Gamers and Content Creators. The project was initially inspired (and a soft-fork) of Bazzite, ut was eventually 
+# About tj5os
+tj5os is a ressurected project of mine, which aims to provide an enhanced stock Fedora experience for Gamers and Content Creators. The project was initially inspired (and a soft-fork) of Bazzite. 
+
+Now, tj5os has a standalone Fedora Kinoite image as well as a Bazzite image, giving you the best of both worlds.
 
 # What’s Coming
 #### Enhanced Hardware Support: The Official CachyOS Kernel port to Fedora linux & ananicy-cpp is fully supported within hyperion, allowing users to get the same great kernel in CachyOS, but in a more stable and reliable base system.

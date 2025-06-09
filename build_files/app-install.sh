@@ -12,3 +12,8 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 #flatpak install flathub com.github.tchx84.Flatseal
 #flatpak install flathub com.ranfdev.DistroShelf
 #flatpak uninstall --unused
+
+
+
+ #Install Steam Package
+dnf5 -y install steam --allowerasing
