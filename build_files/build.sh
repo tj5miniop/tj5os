@@ -55,6 +55,11 @@ dnf5 -y copr disable danayer/libdrm-git
 #Install icon themes
 dnf5 -y install papirus-icon-theme
 
+#Install gamescope & bazzite packages
+dnf -y copr enable kylegospo/bazzite
+dnf5 -y update
+dnf5 -y install steamdeck-backgrounds gamescope mangohud
+dnf5 -y copr disable kylegospo/bazzite
 
 #### Example for enabling a System Unit File
 
