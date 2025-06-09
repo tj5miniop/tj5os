@@ -16,4 +16,5 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 
 
  #Install Steam Package
+dnf5 -y config-manager addrepo --from-repofile=https://negativo17.org/repos/fedora-steam.repo
 dnf5 -y install steam --allowerasing
