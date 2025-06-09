@@ -61,10 +61,6 @@ dnf5 -y update
 dnf5 -y install steamdeck-backgrounds gamescope mangohud
 dnf5 -y copr disable kylegospo/bazzite
 
-# Install the Heroic Games Launcher
-dnf5 -y copr enable atim/heroic-games-launcher
-dnf5 -y install heroic-games-launcher-bin
-
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
