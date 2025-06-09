@@ -1,7 +1,7 @@
 name: Free Disk Space (Ubuntu)
 on: push
     schedule:
-    - cron: ''00 10 * * *'  # 10:05am UTC everyday
+    - cron: ''00 10 * * *'  # 10:00am UTC everyday
 
 jobs:
   free-disk-space:
