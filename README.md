@@ -10,7 +10,7 @@ Now, tj5os has a standalone Fedora Kinoite image as well as a Bazzite image, giv
 # What’s Coming
 #### Enhanced Hardware Support: The Official CachyOS Kernel port to Fedora linux & ananicy-cpp is fully supported within hyperion, allowing users to get the same great kernel in CachyOS, but in a more stable and reliable base system.
 
-#### A pure(ish) Fedora Experience: Hyperion keeps things stock — no extra branding or customization. You can easily enable additional icon themes like the popular Papirus theme through system settings.
+#### A pure(ish) Fedora Experience: everything is as stock as possible — no extra branding or customization. You can easily enable additional icon themes like the popular Papirus theme through system settings.
 
 ### Pre-installed Apps for Your Convenience:
 
