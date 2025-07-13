@@ -9,9 +9,6 @@ dnf5 -y clean all
 # Add SELinux override to install kernel
 setsebool -P domain_kernel_load_modules on
 
-#Regenerate Kernel Modules (Just in Case)
-dracut -f --regenerate-all
-
 #Install CachyOS optimisations
 dnf5 -y copr enable bieszczaders/kernel-cachyos-addons
 dnf5 -y update
