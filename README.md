@@ -7,12 +7,8 @@ tj5os is a ressurected project of mine, which aims to provide an enhanced stock 
 
 Now, tj5os has a standalone Fedora Kinoite image as well as a Bazzite image, giving you the best of both worlds.
 
-# NOTICE - Other Image(s)
-## Due to the way tj5-os is built, a separate version of the KDE edition with flatpak apps such as DistroShelf, ProtonPlus and the Native Brave Browser can be found at https://github.com/tj5miniop/tj5-os
-
-
 # What’s Coming
-#### Enhanced Hardware Support: The Official CachyOS Kernel port to Fedora linux & ananicy-cpp is fully supported within hyperion, allowing users to get the same great kernel in CachyOS, but in a more stable and reliable base system.
+#### Enhanced Hardware Support: The Official CachyOS Kernel port to Fedora linux & ananicy-cpp is installed by default, allowing users to get the same great kernel in CachyOS, but in a more stable and reliable base system.
 
 #### A pure(ish) Fedora Experience: everything is as stock as possible — no extra branding or customization. You can easily enable additional icon themes like the popular Papirus theme through system settings.
 
