@@ -27,6 +27,9 @@ dracut -f --regenerate-all
 #Remove firefox - Users can install their own browser
 dnf5 -y remove firefox
 
+# Try install of Brave Browser using official script from the Brave Browser Team - https://brave.com/linux/
+curl -fsS https://dl.brave.com/install.sh | sh
+
 # Install steam - code taken from ublue-rolling-images 
 dnf5 -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 dnf5 -y config-manager setopt fedora-cisco-openh264.enabled=1
