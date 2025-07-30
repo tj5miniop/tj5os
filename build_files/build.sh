@@ -16,13 +16,6 @@ dnf5 -y config-manager addrepo --from-repofile=https://negativo17.org/repos/fedo
 dnf5 -y config-manager setopt "*fedora*".exclude="mesa-* kernel-core-* kernel-modules-* kernel-uki-virt-*"
 # Add SELinux override to install kernel
 setsebool -P domain_kernel_load_modules on
-dnf5 -y remove kernel-uki-virt
-dnf5 -y copr enable bieszczaders/kernel-cachyos
-rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel-cachyos
-dnf5 -y copr enable bieszczaders/kernel-cachyos
-
-#Regenerate Kernel Modules (Just in Case)
-dracut -f --regenerate-all
 
 #Remove firefox - Users can install their own browser
 dnf5 -y remove firefox
